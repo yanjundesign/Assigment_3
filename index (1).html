@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1>Assignment 3</h1>
+    <script src ='asyncReq.js'></script>
+    <script>
+      function foo()
+      {
+        var v = document.getElementById('theText').value;
+        document.getElementById('demo').innerHTML = v;
+        loadFile("./text?v=" + v, function(res){console.log(res)});
+      }
+    </script>
+  </head>
+
+  <body>
+    <input type='text' maxlength='100' id = 'theText' oninput='foo(this.value)'>
+    <p id='demo'></p>
+  </body>
+</html>
